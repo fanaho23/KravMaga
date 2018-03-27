@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Linq;
 using System.Net;
 using System.Text;
-
+using System.Threading;
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -20,7 +21,8 @@ namespace KravMaga
     public class MainActivity2 : Activity
     {
         List<Eleve> lstEleves;
-        List<Eleve> lstElevesAbsents;
+        List<Eleve> lstElevesAbsents = new List<Eleve> { };
+        Eleve eleveAbsent;
         TextView txtNom;
         TextView txtPrenom;
         ListView lvEleve;
@@ -62,9 +64,12 @@ namespace KravMaga
             //Toast.MakeText(this, e.Position.ToString(), ToastLength.Long).Show();
             nbClick += 1;
             // Eleve eleve = lstEleves[e.Position] ;
-           
+
             //int idEleveAbsent = Convert.ToInt32(eleve.idEleve);
-            lstElevesAbsents = new List<Eleve> { lstEleves[e.Position] };
+
+            eleveAbsent = lstEleves[e.Position];
+            Toast.MakeText(this, eleveAbsent.nomEleve, ToastLength.Long).Show();
+            lstElevesAbsents.Add(eleveAbsent);
             btnAbsence.Click += BtnAbsence_Click;
         }
 
@@ -73,19 +78,27 @@ namespace KravMaga
             
             foreach (Eleve abs in lstElevesAbsents)
             {
+
+                
                 WebClient wc = new WebClient();
-                Uri url = new Uri("http://" + GetString(Resource.String.ip) + "InsertAbsent.php?idEleve="+abs.idEleve+"&date="+DateTime.Now.ToString("dd/MM/yy"));
-                wc.DownloadStringAsync(url);
-                wc.DownloadStringCompleted += Wc_DownloadStringCompleted1;
+                Uri url = new Uri("http://" + GetString(Resource.String.ip) + "InsertAbsent.php");
+                NameValueCollection parametres = new NameValueCollection();
+                parametres.Add("idEleve", abs.idEleve);
+                parametres.Add("date", DateTime.Now.ToString("yyyy-MM-dd"));
+
+                wc.UploadValuesAsync(url,"POST",parametres);
+                wc.UploadValuesCompleted += Wc_UploadValuesCompleted;
                // int i = 4;
 
+
             }
-           // Toast.MakeText(this, DateTime.Now.ToString("dd/MM/yy"), ToastLength.Long).Show();
+            
         }
 
-        private void Wc_DownloadStringCompleted1(object sender, DownloadStringCompletedEventArgs e)
+        private void Wc_UploadValuesCompleted(object sender, UploadValuesCompletedEventArgs e)
         {
-            Toast.MakeText(this, "OK", ToastLength.Long).Show();
+            Toast.MakeText(this, "OK "+ DateTime.Now.ToString("dd-MM-yy"), ToastLength.Long).Show();
         }
+
     }
 }
