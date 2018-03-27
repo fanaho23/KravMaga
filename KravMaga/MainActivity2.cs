@@ -77,7 +77,7 @@ namespace KravMaga
                 Uri url = new Uri("http://" + GetString(Resource.String.ip) + "InsertAbsent.php?idEleve="+abs.idEleve+"&date="+DateTime.Now.ToString("dd/MM/yy"));
                 wc.DownloadStringAsync(url);
                 wc.DownloadStringCompleted += Wc_DownloadStringCompleted1;
-                int i = 4;
+               // int i = 4;
 
             }
            // Toast.MakeText(this, DateTime.Now.ToString("dd/MM/yy"), ToastLength.Long).Show();
