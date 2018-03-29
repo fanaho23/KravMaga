@@ -47,6 +47,9 @@ namespace KravMaga
 			// aapt resource value: 0x7f04000a
 			public const int btnAbsence = 2130968586;
 			
+			// aapt resource value: 0x7f04000c
+			public const int btnAbsent = 2130968588;
+			
 			// aapt resource value: 0x7f04000b
 			public const int btnListe = 2130968587;
 			

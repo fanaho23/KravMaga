@@ -18,15 +18,27 @@ namespace KravMaga
     public class MainActivityMenuInstructeur : Activity
     {
         Button btnListe;
+        Button btnAbsent;
         Instructeur i;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.MenuInstructeur);
             btnListe = FindViewById<Button>(Resource.Id.btnListe);
-            
+            btnAbsent = FindViewById<Button>(Resource.Id.btnAbsent);
             btnListe.Click += BtnListe_Click;
+            btnAbsent.Click += BtnAbsent_Click;
             // Create your application here
+        }
+
+        private void BtnAbsent_Click(object sender, EventArgs e)
+        {
+            string instructeur = Intent.GetStringExtra("unInstructeur");
+            Instructeur i = JsonConvert.DeserializeObject<Instructeur>(instructeur);
+            Intent intent = new Intent(this, typeof(MainActivityAbsence));
+            intent.PutExtra("unInstructeur", JsonConvert.SerializeObject(i));
+            StartActivity(intent);
+            //Toast.MakeText(this, "Btn ok", ToastLength.Short).Show();
         }
 
         private void BtnListe_Click(object sender, EventArgs e)

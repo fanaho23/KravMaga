@@ -59,6 +59,7 @@
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
     <Compile Include="MainActivity2.cs" />
+    <Compile Include="MainActivityAbsence.cs" />
     <Compile Include="MainActivityMenuInstructeur.cs" />
     <Compile Include="MesAdapters\AdapterEleve.cs" />
     <Compile Include="Model\Absence.cs" />
