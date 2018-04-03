@@ -60,13 +60,16 @@
     <Compile Include="MainActivity.cs" />
     <Compile Include="MainActivity2.cs" />
     <Compile Include="MainActivityAbsence.cs" />
+    <Compile Include="MainActivityGroupe.cs" />
     <Compile Include="MainActivityMenuEleve.cs" />
     <Compile Include="MainActivityMenuInstructeur.cs" />
     <Compile Include="MesAdapters\AdapterAbsence.cs" />
     <Compile Include="MesAdapters\AdapterEleve.cs" />
+    <Compile Include="MesAdapters\AdapterMessage.cs" />
     <Compile Include="Model\Absence.cs" />
     <Compile Include="Model\Eleve.cs" />
     <Compile Include="Model\Instructeur.cs" />
+    <Compile Include="Model\Message.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -92,6 +95,12 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\MenuEleve.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\MainMessageGroupe.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\ItemMessageGroupe.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

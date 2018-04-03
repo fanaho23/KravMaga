@@ -44,29 +44,35 @@ namespace KravMaga
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f04000b
-			public const int btnAbsence = 2130968587;
+			// aapt resource value: 0x7f04000d
+			public const int btnAbsence = 2130968589;
 			
-			// aapt resource value: 0x7f040010
-			public const int btnAbsent = 2130968592;
-			
-			// aapt resource value: 0x7f04000c
-			public const int btnAfficher = 2130968588;
+			// aapt resource value: 0x7f040015
+			public const int btnAbsent = 2130968597;
 			
 			// aapt resource value: 0x7f04000e
-			public const int btnGroupe = 2130968590;
+			public const int btnAfficher = 2130968590;
 			
-			// aapt resource value: 0x7f04000f
-			public const int btnListe = 2130968591;
+			// aapt resource value: 0x7f040012
+			public const int btnEnvoyer = 2130968594;
+			
+			// aapt resource value: 0x7f040013
+			public const int btnGroupe = 2130968595;
+			
+			// aapt resource value: 0x7f040014
+			public const int btnListe = 2130968596;
 			
 			// aapt resource value: 0x7f040004
 			public const int btnValider = 2130968580;
 			
-			// aapt resource value: 0x7f04000d
-			public const int lvAbsence = 2130968589;
+			// aapt resource value: 0x7f04000f
+			public const int lvAbsence = 2130968591;
 			
-			// aapt resource value: 0x7f04000a
-			public const int lvEleve = 2130968586;
+			// aapt resource value: 0x7f04000c
+			public const int lvEleve = 2130968588;
+			
+			// aapt resource value: 0x7f040010
+			public const int lvMessageGroupe = 2130968592;
 			
 			// aapt resource value: 0x7f040005
 			public const int textView1 = 2130968581;
@@ -80,11 +86,20 @@ namespace KravMaga
 			// aapt resource value: 0x7f040002
 			public const int tvPwd = 2130968578;
 			
+			// aapt resource value: 0x7f04000a
+			public const int txtAuteur = 2130968586;
+			
 			// aapt resource value: 0x7f040006
 			public const int txtDate = 2130968582;
 			
+			// aapt resource value: 0x7f04000b
+			public const int txtDescription = 2130968587;
+			
 			// aapt resource value: 0x7f040001
 			public const int txtLogin = 2130968577;
+			
+			// aapt resource value: 0x7f040011
+			public const int txtMessage = 2130968593;
 			
 			// aapt resource value: 0x7f040007
 			public const int txtNom = 2130968583;
@@ -118,16 +133,22 @@ namespace KravMaga
 			public const int ItemEleve = 2130837506;
 			
 			// aapt resource value: 0x7f020003
-			public const int Main = 2130837507;
+			public const int ItemMessageGroupe = 2130837507;
 			
 			// aapt resource value: 0x7f020004
-			public const int MainAbsence = 2130837508;
+			public const int Main = 2130837508;
 			
 			// aapt resource value: 0x7f020005
-			public const int MenuEleve = 2130837509;
+			public const int MainAbsence = 2130837509;
 			
 			// aapt resource value: 0x7f020006
-			public const int MenuInstructeur = 2130837510;
+			public const int MainMessageGroupe = 2130837510;
+			
+			// aapt resource value: 0x7f020007
+			public const int MenuEleve = 2130837511;
+			
+			// aapt resource value: 0x7f020008
+			public const int MenuInstructeur = 2130837512;
 			
 			static Layout()
 			{

@@ -10,6 +10,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using KravMaga.Model;
+using Newtonsoft.Json;
 
 namespace KravMaga
 {
@@ -31,7 +32,13 @@ namespace KravMaga
 
         private void BtnGroupe_Click(object sender, EventArgs e)
         {
-            Toast.MakeText(this, "page de +", ToastLength.Long).Show();
+            string unEleve = Intent.GetStringExtra("unEleve");
+            eleve = JsonConvert.DeserializeObject<Eleve>(unEleve);
+
+            Intent intent = new Intent(this, typeof(MainActivityGroupe));
+            intent.PutExtra("unEleve", JsonConvert.SerializeObject(eleve));
+            StartActivity(intent);
+            //Toast.MakeText(this, "page de +", ToastLength.Long).Show();
         }
     }
 }

@@ -21,10 +21,8 @@ namespace KravMaga
     {
         ListView lvAbsence;
         List<Absence> lstAbsence;
-        Eleve eleve;
         EditText txtNom;
         Button btnAfficher;
-        Instructeur instructeur;
         AdapterAbsence adapter;
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -50,7 +48,7 @@ namespace KravMaga
 
         private void Wc_DownloadStringCompleted(object sender, DownloadStringCompletedEventArgs e)
         {
-            Toast.MakeText(this,"c'est bon", ToastLength.Short).Show();
+            //Toast.MakeText(this,"c'est bon", ToastLength.Short).Show();
             lstAbsence = JsonConvert.DeserializeObject<List<Absence>>(e.Result);
             adapter = new AdapterAbsence(this, lstAbsence);
             lvAbsence.Adapter = adapter;

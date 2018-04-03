@@ -31,11 +31,6 @@ namespace KravMaga
             txtLogin = FindViewById<EditText>(Resource.Id.txtLogin);
             txtMdp = FindViewById<EditText>(Resource.Id.txtLogin);
             btnValider = FindViewById<Button>(Resource.Id.btnValider);
-            /*WebClient wc = new WebClient();
-            Uri url = new Uri("http://"+GetString(Resource.String.ip)+"GetAllEleve.php");
-
-            wc.DownloadStringAsync(url);
-            wc.DownloadStringCompleted += Wc_DownloadStringCompleted;*/
             btnValider.Click += BtnValider_Click;
 
         }
@@ -66,9 +61,8 @@ namespace KravMaga
                 if (txtLogin.Text == eleve.login && txtMdp.Text == eleve.mdp && txtLogin.Text != "" && txtMdp.Text != "")
                 {
                     Intent intentMenu = new Intent(this, typeof(MainActivityMenuEleve));
-                    //string idEleve = eleve.idInstructeur;
                     intentMenu.PutExtra("unEleve", JsonConvert.SerializeObject(eleve));
-                    //Toast.MakeText(this, "", ToastLength.Long).Show();
+                    Toast.MakeText(this, "Ok", ToastLength.Long).Show();
                     StartActivity(intentMenu);
                 }
             }
@@ -76,25 +70,16 @@ namespace KravMaga
 
         private void Wc_DownloadStringCompleted(object sender, DownloadStringCompletedEventArgs e)
         {
-            /*lstEleves = JsonConvert.DeserializeObject<List<Eleve>>(e.Result);
 
-            adapter = new AdapterEleve(this, lstEleves);
-
-            lvEleve.Adapter = adapter;
-            int i = 0;*/
             lstInstructeur = JsonConvert.DeserializeObject<List<Instructeur>>(e.Result);
             foreach (Instructeur i in lstInstructeur)
             {
                 if (txtLogin.Text == i.loginInstructeur && txtMdp.Text == i.mdpInstructeur && txtLogin.Text != "" && txtMdp.Text !="" )
                 {
 
-                    //Intent intent = new Intent(this, typeof(MainActivity2));
                     Intent intentMenu = new Intent(this, typeof(MainActivityMenuInstructeur));
-                    //Intent intentMenu = new Intent(this, typeof(MainActivityMenuInstructeur));
                     string instructeur = i.idInstructeur;
                     intentMenu.PutExtra("unInstructeur", JsonConvert.SerializeObject(i));
-                   // intentMenu.PutExtra("Test", JsonConvert.SerializeObject(i));
-                    //intentMenu.PutExtra("LeInstructeur", JsonConvert.SerializeObject(i));
                     Toast.MakeText(this , "Ok", ToastLength.Long).Show();
                     StartActivity(intentMenu);
 
