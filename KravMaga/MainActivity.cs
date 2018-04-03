@@ -65,7 +65,11 @@ namespace KravMaga
             {
                 if (txtLogin.Text == eleve.login && txtMdp.Text == eleve.mdp && txtLogin.Text != "" && txtMdp.Text != "")
                 {
-                   // Intent intent = new Intent(this, typeof());
+                    Intent intentMenu = new Intent(this, typeof(MainActivityMenuEleve));
+                    //string idEleve = eleve.idInstructeur;
+                    intentMenu.PutExtra("unEleve", JsonConvert.SerializeObject(eleve));
+                    //Toast.MakeText(this, "", ToastLength.Long).Show();
+                    StartActivity(intentMenu);
                 }
             }
         }

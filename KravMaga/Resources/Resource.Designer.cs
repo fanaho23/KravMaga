@@ -47,14 +47,17 @@ namespace KravMaga
 			// aapt resource value: 0x7f04000b
 			public const int btnAbsence = 2130968587;
 			
-			// aapt resource value: 0x7f04000f
-			public const int btnAbsent = 2130968591;
+			// aapt resource value: 0x7f040010
+			public const int btnAbsent = 2130968592;
 			
 			// aapt resource value: 0x7f04000c
 			public const int btnAfficher = 2130968588;
 			
 			// aapt resource value: 0x7f04000e
-			public const int btnListe = 2130968590;
+			public const int btnGroupe = 2130968590;
+			
+			// aapt resource value: 0x7f04000f
+			public const int btnListe = 2130968591;
 			
 			// aapt resource value: 0x7f040004
 			public const int btnValider = 2130968580;
@@ -121,7 +124,10 @@ namespace KravMaga
 			public const int MainAbsence = 2130837508;
 			
 			// aapt resource value: 0x7f020005
-			public const int MenuInstructeur = 2130837509;
+			public const int MenuEleve = 2130837509;
+			
+			// aapt resource value: 0x7f020006
+			public const int MenuInstructeur = 2130837510;
 			
 			static Layout()
 			{
