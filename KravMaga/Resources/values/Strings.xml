@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="app_name">KravMaga</string>
-  <string name="ip">172.16.3.64/KravMaga/</string>
+  <string name="ip">192.168.1.78/KravMaga/</string>
 </resources>
 <!--192.168.1.34-->

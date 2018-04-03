@@ -23,6 +23,9 @@ namespace KravMaga.Model
         public string prenomEleve { get; set; }
         [JsonProperty("idInstructeur")]
         public string  idInstructeur { get; set; }
-
+        [JsonProperty("mdp")]
+        public string mdp { get; set; }
+        [JsonProperty("login")]
+        public string login { get; set; }
     }
 }

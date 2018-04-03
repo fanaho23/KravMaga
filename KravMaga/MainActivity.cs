@@ -20,6 +20,7 @@ namespace KravMaga
         EditText txtMdp;
         Button btnValider;
         List<Instructeur> lstInstructeur;
+        List<Eleve> lstEleve;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -42,10 +43,31 @@ namespace KravMaga
         private void BtnValider_Click(object sender, EventArgs e)
         {
             WebClient wc = new WebClient();
+
+            WebClient wc2 = new WebClient();
+
             Uri url = new Uri("http://" + GetString(Resource.String.ip) + "GetAllInstructeur.php");
+
+            Uri url2 = new Uri("http://" + GetString(Resource.String.ip) + "GetAllEleve.php");
 
             wc.DownloadStringAsync(url);
             wc.DownloadStringCompleted += Wc_DownloadStringCompleted;
+
+            wc2.DownloadStringAsync(url2);
+            wc2.DownloadStringCompleted += Wc2_DownloadStringCompleted;
+        }
+
+        private void Wc2_DownloadStringCompleted(object sender, DownloadStringCompletedEventArgs e)
+        {
+            lstEleve = JsonConvert.DeserializeObject<List<Eleve>>(e.Result);
+
+            foreach ( Eleve eleve in lstEleve)
+            {
+                if (txtLogin.Text == eleve.login && txtMdp.Text == eleve.mdp && txtLogin.Text != "" && txtMdp.Text != "")
+                {
+                   // Intent intent = new Intent(this, typeof());
+                }
+            }
         }
 
         private void Wc_DownloadStringCompleted(object sender, DownloadStringCompletedEventArgs e)

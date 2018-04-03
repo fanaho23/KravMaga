@@ -61,6 +61,7 @@
     <Compile Include="MainActivity2.cs" />
     <Compile Include="MainActivityAbsence.cs" />
     <Compile Include="MainActivityMenuInstructeur.cs" />
+    <Compile Include="MesAdapters\AdapterAbsence.cs" />
     <Compile Include="MesAdapters\AdapterEleve.cs" />
     <Compile Include="Model\Absence.cs" />
     <Compile Include="Model\Eleve.cs" />
@@ -81,6 +82,12 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\MenuInstructeur.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\ItemAbsence.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\MainAbsence.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

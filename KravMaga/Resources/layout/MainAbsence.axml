@@ -4,23 +4,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <TextView
-        android:text="Nom"
+        android:text="Saisir le nom de l'élève:"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textView1" />
-    <TextView
-        android:text="Text"
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="#757575"
         android:id="@+id/txtNom" />
-    <TextView
-        android:text="Prenom"
+      <Button
+        android:text="Afficher"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textView4" />
-    <TextView
-        android:text="Text"
+        android:background="#01579B"
+        android:id="@+id/btnAfficher" />
+    <ListView
+        android:minWidth="25px"
+        android:minHeight="25px"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/txtPrenom" />
+        android:layout_height="175.0dp"
+        android:id="@+id/lvAbsence" />
 </LinearLayout>
