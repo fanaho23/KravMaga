@@ -22,6 +22,7 @@ namespace KravMaga
         List<Instructeur> lstInstructeur;
         List<Eleve> lstEleve;
 
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
