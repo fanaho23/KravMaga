@@ -21,7 +21,7 @@ namespace KravMaga
     public class MainActivity2 : Activity
     {
         List<Eleve> lstEleves;
-        List<Eleve> lstElevesAbsents = new List<Eleve> { };
+        List<Eleve> lstElevesAbsents;
         Eleve eleveAbsent;
         TextView txtNom;
         TextView txtPrenom;
@@ -37,6 +37,8 @@ namespace KravMaga
             // Create your application here
             lvEleve = FindViewById<ListView>(Resource.Id.lvEleve);
             btnAbsence = FindViewById<Button>(Resource.Id.btnAbsence);
+            btnAbsence.Click += BtnAbsence_Click;
+            lstElevesAbsents = new List<Eleve>();
 
             WebClient wc = new WebClient();
             string instructeur = Intent.GetStringExtra("unInstructeur");
@@ -68,14 +70,14 @@ namespace KravMaga
             //int idEleveAbsent = Convert.ToInt32(eleve.idEleve);
 
             eleveAbsent = lstEleves[e.Position];
-            Toast.MakeText(this, eleveAbsent.nomEleve, ToastLength.Long).Show();
+            //Toast.MakeText(this, eleveAbsent.nomEleve, ToastLength.Long).Show();
             lstElevesAbsents.Add(eleveAbsent);
-            btnAbsence.Click += BtnAbsence_Click;
+            
         }
 
         private void BtnAbsence_Click(object sender, EventArgs e)
         {
-            
+            Toast.MakeText(this, DateTime.Now.ToString("yyyy-MM-dd"), ToastLength.Long).Show();
             foreach (Eleve abs in lstElevesAbsents)
             {
 
@@ -97,7 +99,7 @@ namespace KravMaga
 
         private void Wc_UploadValuesCompleted(object sender, UploadValuesCompletedEventArgs e)
         {
-            Toast.MakeText(this, "OK "+ DateTime.Now.ToString("dd-MM-yy"), ToastLength.Long).Show();
+            //Toast.MakeText(this, "OK "+ DateTime.Now.ToString("dd-MM-yy"), ToastLength.Long).Show();
         }
 
     }

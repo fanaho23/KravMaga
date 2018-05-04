@@ -37,7 +37,7 @@ namespace KravMaga
             btnEnvoyer = FindViewById<Button>(Resource.Id.btnEnvoyer);
             txtAuteur = FindViewById<TextView>(Resource.Id.txtAuteur);
             txtDescription = FindViewById<TextView>(Resource.Id.txtDescription);
-
+            btnEnvoyer.Click += BtnEnvoyer_Click;
             WebClient wc = new WebClient();
 
             string unEleve = Intent.GetStringExtra("unEleve");
@@ -63,8 +63,6 @@ namespace KravMaga
             lvEleve.ItemClick += LvEleve_ItemClick;
             btnAbsence.Click += BtnAbsence_Click;*/
             int i = 6;
-            btnEnvoyer.Click += BtnEnvoyer_Click;
-
         }
 
         private void BtnEnvoyer_Click(object sender, EventArgs e)
