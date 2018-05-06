@@ -57,7 +57,7 @@ namespace KravMaga
             adapter = new AdapterEleve(this, lstEleves);
             lvEleve.Adapter = adapter;
             lvEleve.ItemClick += LvEleve_ItemClick;
-            btnAbsence.Click += BtnAbsence_Click;
+            //btnAbsence.Click += BtnAbsence_Click;
             int i = 6;
         }
 
